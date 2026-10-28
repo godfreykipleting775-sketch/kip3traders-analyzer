@@ -1,105 +1,25 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kip3Traders Synthetic Analyzer</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; padding: 20px;
-      background: #08111f; color: #f1f5f9;
-      font-family: Arial, sans-serif;
-    }
-    main { max-width: 650px; margin: auto; }
-    header { text-align: center; padding: 25px 0; }
-    h1 { color: #38bdf8; }
-    .card {
-      background: #142033; padding: 18px;
-      border-radius: 14px; margin: 16px 0;
-    }
-    label { display: block; margin: 12px 0 6px; }
-    select, button {
-      width: 100%; padding: 13px; border-radius: 8px;
-      border: 0; font-size: 16px;
-    }
-    select { background: #e2e8f0; color: #111827; }
-    button {
-      background: #0284c7; color: white;
-      font-weight: bold; margin-top: 15px;
-    }
-    .muted { color: #a8b7cc; line-height: 1.6; }
-    #result { line-height: 1.8; }
-    .warning { color: #fbbf24; font-size: 14px; }
-  </style>
-</head>
-<body>
-<main>
-  <header>
-    <h1>Kip3Traders</h1>
-    <p>Synthetic Market Analyzer</p>
-    <p class="muted">Market analysis tools for learning and demo testing.</p>
-  </header>
-
-  <section class="card">
-    <h2>Signal Analysis</h2>
-    <label for="market">Choose market</label>
-    <select id="market">
-      <option>Volatility 10 Index</option>
-      <option>Volatility 25 Index</option>
-      <option>Volatility 50 Index</option>
-      <option>Volatility 75 Index</option>
-      <option>Volatility 100 Index</option>
-      <option>Step Index</option>
-    </select>
-
-    <label for="timeframe">Timeframe</label>
-    <select id="timeframe">
-      <option>1 minute</option>
-      <option selected>5 minutes</option>
-      <option>15 minutes</option>
-      <option>1 hour</option>
-    </select>
-
-    <button onclick="analyze()">Generate Learning Example</button>
-    <div id="result" aria-live="polite"></div>
-  </section>
-
-  <section class="card">
-    <h2>Planned Features</h2>
-    <p>• Live Deriv market data</p>
-    <p>• RSI, EMA and MACD indicators</p>
-    <p>• Historical backtesting</p>
-    <p>• Demo trading integration</p>
-    <p class="warning">No live trading or guaranteed-profit signals.</p>
-  </section>
-
-  <p class="muted">
-    Important: The example signal is randomly generated for demonstration.
-    It is not based on live market data and must not be used to place trades.
-  </p>
-</main>
-
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07111f"><title>Kip3Traders Matches & Differs</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#101e31;--line:#263b54;--text:#edf5ff;--muted:#9bb0c9;--blue:#38bdf8;--green:#4ade80;--amber:#fbbf24;--red:#fb7185}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#07111f,#0b1830);color:var(--text);font:15px system-ui,Arial,sans-serif}main{max-width:950px;margin:auto;padding:18px}h1{color:var(--blue);font-size:clamp(27px,5vw,38px);margin:8px 0}h2{font-size:19px;margin:0 0 12px}p{line-height:1.5}.muted,.small{color:var(--muted)}.small{font-size:12px}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin:13px 0}label{display:block;color:var(--muted);font-size:13px;margin:10px 0 6px}select,button{font:inherit;border-radius:10px;padding:12px;width:100%;border:1px solid var(--line);background:#0a1627;color:var(--text)}button{background:#0879ad;border:0;font-weight:700;cursor:pointer;margin-top:10px}button.secondary{background:#24364d}.row{display:flex;gap:9px;flex-wrap:wrap}.row>*{flex:1;min-width:130px}.big{font-size:30px;font-weight:800}.blue{color:var(--blue)}.amber{color:var(--amber)}.green{color:var(--green)}.digits{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.digit{padding:10px 4px;text-align:center;border:1px solid var(--line);border-radius:10px;background:#0a1627}.digit b{display:block;font-size:19px}.bar{height:5px;background:#263b54;border-radius:8px;margin-top:7px;overflow:hidden}.bar span{display:block;height:100%;background:var(--blue)}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:9px 5px;border-bottom:1px solid var(--line);font-size:13px}.notice{border-left:3px solid var(--amber);padding:10px 12px;background:#2a2517;border-radius:5px;color:#fce7a6;font-size:13px}footer{padding:12px 0 30px;color:var(--muted);font-size:12px}
+</style></head><body><main><header><span class="pill">KIP3TRADERS • LIVE DERIV DATA</span><h1>Matches &amp; Differs Predictor</h1><p class="muted">Live last-digit monitoring, frequency statistics and spoken risk alerts.</p><div id="connection" class="pill">Disconnected — tap Connect to Deriv</div></header>
+<div class="notice">Educational analysis only. Historical digit frequencies do not reliably predict the next tick. Voice alerts are statistical reminders, not guarantees or instructions to trade. This website cannot place orders.</div>
+<div class="grid"><section class="card"><h2>Live market</h2><label for="market">Synthetic index</label><select id="market"><option value="">Connect to load markets…</option></select><div class="row"><div><label>Latest price</label><div id="price" class="big">—</div></div><div><label>Last digit</label><div id="lastDigit" class="big blue">—</div></div></div><div class="row"><button id="connect">Connect to Deriv</button><button id="disconnect" class="secondary">Disconnect</button></div><p class="small">Public market data only. No login, token or account balance requested.</p></section>
+<section class="card"><h2>Voice assistant</h2><label for="voiceMode">Spoken alerts</label><select id="voiceMode"><option value="all">Speak status updates</option><option value="caution">Speak WAIT alerts only</option><option value="off">Silent</option></select><label for="minimum">Minimum sample size</label><select id="minimum"><option>100</option><option selected>300</option><option>500</option></select><button id="voice" class="secondary">Enable voice alerts</button><p id="voiceState" class="small">Voice is off. Tap Enable voice alerts.</p><p class="small">Keep the page open; Android may pause background audio or connections.</p></section></div>
+<div class="grid"><section class="card"><h2>Matches analysis</h2><p class="muted">How often your chosen digit appeared in the observed sample.</p><label for="matchDigit">Digit to match</label><select id="matchDigit"></select><div id="matchRate" class="big">—</div><p id="matchDetail" class="small muted">Waiting for live ticks.</p></section><section class="card"><h2>Differs analysis</h2><p class="muted">How often the next digit differed historically from your chosen digit.</p><label for="diffDigit">Digit to differ from</label><select id="diffDigit"></select><div id="diffRate" class="big">—</div><p id="diffDetail" class="small muted">Waiting for live ticks.</p></section></div>
+<section class="card"><div class="row"><div><h2>Recent digit frequency</h2><p class="small muted">Rolling sample, up to 500 ticks</p></div><div style="text-align:right"><div id="sample" class="big">0</div><div class="small muted">ticks</div></div></div><div id="digits" class="digits"></div></section>
+<section class="card"><h2>Recent ticks</h2><div style="overflow-x:auto"><table><thead><tr><th>Time</th><th>Price</th><th>Last digit</th></tr></thead><tbody id="history"><tr><td colspan="3">Connect to begin.</td></tr></tbody></table></div></section>
+<footer>Kip3Traders • No automated orders • No promise of profits. Verify contract terms and risk before trading.</footer></main>
 <script>
-function analyze() {
-  const market = document.getElementById('market').value;
-  const timeframe = document.getElementById('timeframe').value;
-  const examples = [
-    ['BUY example', 'Possible upward scenario'],
-    ['SELL example', 'Possible downward scenario'],
-    ['WAIT', 'No clear example direction']
-  ];
-  const item = examples[Math.floor(Math.random() * examples.length)];
-
-  document.getElementById('result').innerHTML =
-    '<h3>' + item[0] + '</h3>' +
-    '<p>Market: ' + market + '</p>' +
-    '<p>Timeframe: ' + timeframe + '</p>' +
-    '<p>' + item[1] + '</p>' +
-    '<p class="warning">Illustration only — not a real trading signal.</p>';
-}
-</script>
-</body>
-    </html>
-    
+(()=>{const $=id=>document.getElementById(id);let ws=null,req=1,symbol="",ticks=[],voiceOn=false,lastSpoken="",pip=2;const endpoint="wss://api.derivws.com/trading/v1/options/ws/public";for(let d=0;d<10;d++){ $("matchDigit").add(new Option(d,d));$("diffDigit").add(new Option(d,d));}
+function status(t){$("connection").textContent=t}
+function speak(t){if(!voiceOn||$("voiceMode").value==="off"||!window.speechSynthesis||t===lastSpoken)return;lastSpoken=t;window.speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=.92;window.speechSynthesis.speak(u)}
+function connect(){if(ws)ws.close();ticks=[];render();status("Connecting to Deriv…");ws=new WebSocket(endpoint);ws.onopen=()=>{status("Connected; loading available symbols…");ws.send(JSON.stringify({active_symbols:"brief",req_id:req++}))};ws.onmessage=e=>{let m;try{m=JSON.parse(e.data)}catch{return}if(m.error){status("Deriv error: "+m.error.message);return}
+if(m.msg_type==="active_symbols"&&Array.isArray(m.active_symbols)){let list=m.active_symbols.filter(x=>/synthetic|volatility|step index|boom|crash|jump|range break|drift|daily reset/i.test([x.market_display_name,x.submarket_display_name,x.display_name].join(" ")));list.sort((a,b)=>(a.display_name||"").localeCompare(b.display_name||""));let s=$("market");s.innerHTML="";list.forEach(x=>s.add(new Option((x.display_name||x.symbol)+" ("+x.symbol+")",x.symbol)));let chosen=list.find(x=>/Volatility 100 \(1s\)/i.test(x.display_name||""))||list.find(x=>/Volatility 100/i.test(x.display_name||""))||list[0];if(chosen){s.value=chosen.symbol;subscribe(chosen.symbol)}else status("Connected, but no synthetic symbols were returned")}
+if(m.msg_type==="history"&&m.history&&Array.isArray(m.history.prices)){let prices=m.history.prices, times=m.history.times||[];prices.forEach((q,i)=>addTick(q,times[i],m.pip_size));if(m.subscription)status("Live • "+symbol);render()}
+if(m.msg_type==="tick"&&m.tick&&m.tick.symbol===symbol){addTick(m.tick.quote,m.tick.epoch,m.tick.pip_size);status("Live • "+symbol);render()}};ws.onerror=()=>status("Connection error — reconnect and try again");ws.onclose=()=>status("Disconnected")}
+function subscribe(s){if(!ws||ws.readyState!==1)return;symbol=s;ticks=[];render();ws.send(JSON.stringify({ticks_history:s,end:"latest",count:100,style:"ticks",subscribe:1,req_id:req++}));status("Loading live ticks…")}
+function addTick(q,epoch,ps){pip=Number.isFinite(ps)?ps:pip;let price=Number(q).toFixed(pip),ds=price.replace(/\D/g,""),digit=ds.length?Number(ds[ds.length-1]):null;if(digit===null)return;ticks.push({time:new Date((Number(epoch)||Date.now()/1000)*1000),price,digit});if(ticks.length>500)ticks.shift();$("price").textContent=price;$("lastDigit").textContent=digit}
+function render(){let counts=Array(10).fill(0);ticks.forEach(t=>counts[t.digit]++);let n=ticks.length;$("sample").textContent=n;$("digits").innerHTML=counts.map((c,d)=>`<div class="digit"><b>${d}</b><span>${n?(100*c/n).toFixed(1):"0.0"}%</span><div class="bar"><span style="width:${n?100*c/n:0}%"></span></div><small>${c} hits</small></div>`).join("");let md=Number($("matchDigit").value||0),dd=Number($("diffDigit").value||0),min=Number($("minimum").value||300),mp=n?counts[md]/n*100:0,dp=n?(1-counts[dd]/n)*100:0;$("matchRate").textContent=n?mp.toFixed(1)+"%":"—";$("matchDetail").textContent=`Digit ${md}: ${counts[md]} of ${n} ticks. `+(n<min?"Insufficient sample for your chosen minimum.":"Sample threshold reached; next tick remains uncertain.");$("diffRate").textContent=n?dp.toFixed(1)+"%":"—";$("diffDetail").textContent=`Digit ${dd} absent in ${n-counts[dd]} of ${n} ticks. `+(n<min?"Insufficient sample for your chosen minimum.":"Sample threshold reached; next tick remains uncertain.");$("history").innerHTML=ticks.slice(-12).reverse().map(t=>`<tr><td>${t.time.toLocaleTimeString()}</td><td>${t.price}</td><td><b>${t.digit}</b></td></tr>`).join("")||'<tr><td colspan="3">Waiting for live ticks…</td></tr>';
+if(n>=min){let mode=$("voiceMode").value;if(mode==="caution")speak("Wait. Historical digit frequencies do not establish a reliable edge. Review risk before trading.");else if(mode==="all")speak("Sample updated. Matches digit "+md+" appeared "+mp.toFixed(1)+" percent of recent ticks. Differs from digit "+dd+" appeared "+dp.toFixed(1)+" percent. This is historical frequency, not a prediction. Review risk.")}}
+$("connect").onclick=connect;$("disconnect").onclick=()=>{if(ws){ws.close();ws=null}symbol="";ticks=[];render()};$("market").onchange=e=>subscribe(e.target.value);["matchDigit","diffDigit","minimum","voiceMode"].forEach(id=>$(id).onchange=render);$("voice").onclick=()=>{if(!window.speechSynthesis){$("voiceState").textContent="Speech is unavailable in this browser. Try Chrome.";return}voiceOn=!voiceOn;if(voiceOn){$("voice").textContent="Disable voice alerts";$("voiceState").textContent="Voice enabled. Keep the page open.";speak("Kip3Traders voice alerts enabled. Wait for live data and always review risk.")}else{speechSynthesis.cancel();$("voice").textContent="Enable voice alerts";$("voiceState").textContent="Voice is off."}};window.onbeforeunload=()=>{if(ws)ws.close()}})();
+</script></body></html>

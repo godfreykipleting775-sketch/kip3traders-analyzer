@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kip3Traders Synthetic Analyzer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 20px;
+      background: #08111f; color: #f1f5f9;
+      font-family: Arial, sans-serif;
+    }
+    main { max-width: 650px; margin: auto; }
+    header { text-align: center; padding: 25px 0; }
+    h1 { color: #38bdf8; }
+    .card {
+      background: #142033; padding: 18px;
+      border-radius: 14px; margin: 16px 0;
+    }
+    label { display: block; margin: 12px 0 6px; }
+    select, button {
+      width: 100%; padding: 13px; border-radius: 8px;
+      border: 0; font-size: 16px;
+    }
+    select { background: #e2e8f0; color: #111827; }
+    button {
+      background: #0284c7; color: white;
+      font-weight: bold; margin-top: 15px;
+    }
+    .muted { color: #a8b7cc; line-height: 1.6; }
+    #result { line-height: 1.8; }
+    .warning { color: #fbbf24; font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Kip3Traders</h1>
+    <p>Synthetic Market Analyzer</p>
+    <p class="muted">Market analysis tools for learning and demo testing.</p>
+  </header>
+
+  <section class="card">
+    <h2>Signal Analysis</h2>
+    <label for="market">Choose market</label>
+    <select id="market">
+      <option>Volatility 10 Index</option>
+      <option>Volatility 25 Index</option>
+      <option>Volatility 50 Index</option>
+      <option>Volatility 75 Index</option>
+      <option>Volatility 100 Index</option>
+      <option>Step Index</option>
+    </select>
+
+    <label for="timeframe">Timeframe</label>
+    <select id="timeframe">
+      <option>1 minute</option>
+      <option selected>5 minutes</option>
+      <option>15 minutes</option>
+      <option>1 hour</option>
+    </select>
+
+    <button onclick="analyze()">Generate Learning Example</button>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section class="card">
+    <h2>Planned Features</h2>
+    <p>• Live Deriv market data</p>
+    <p>• RSI, EMA and MACD indicators</p>
+    <p>• Historical backtesting</p>
+    <p>• Demo trading integration</p>
+    <p class="warning">No live trading or guaranteed-profit signals.</p>
+  </section>
+
+  <p class="muted">
+    Important: The example signal is randomly generated for demonstration.
+    It is not based on live market data and must not be used to place trades.
+  </p>
+</main>
+
+<script>
+function analyze() {
+  const market = document.getElementById('market').value;
+  const timeframe = document.getElementById('timeframe').value;
+  const examples = [
+    ['BUY example', 'Possible upward scenario'],
+    ['SELL example', 'Possible downward scenario'],
+    ['WAIT', 'No clear example direction']
+  ];
+  const item = examples[Math.floor(Math.random() * examples.length)];
+
+  document.getElementById('result').innerHTML =
+    '<h3>' + item[0] + '</h3>' +
+    '<p>Market: ' + market + '</p>' +
+    '<p>Timeframe: ' + timeframe + '</p>' +
+    '<p>' + item[1] + '</p>' +
+    '<p class="warning">Illustration only — not a real trading signal.</p>';
+}
+</script>
+</body>
+    </html>
+    
